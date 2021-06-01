@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+/*font-family: 'Barlow Semi Condensed', sans-serif;*/
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+  background: var(--light-grayish-blue);
+}
+
+main {
+  width: 100vw;
+  height: 97vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 70vw;
+  height: 72vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 30px;
+  grid-template-areas: "daniel daniel jonathan kira"
+                       "jeanette patrick patrick kira"
+}
+
+.box {
+  height: auto;
+  border-radius: 0.6rem;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.name p:last-child {
+  font-size: 0.8rem;
+  opacity: 70%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.text {
+  opacity: 50%;
+}
+
+.person img {
+  width: 2rem;
+  border-radius: 100%;
+  margin-right: 1rem;
+}
+
+#daniel {
+  grid-area: daniel;
+  background: var(--moderate-violet);
+  background-image: url('../images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-size: 7.5rem;
+  background-position-x: 80%;
+  color: #FFF;
+}
+
+#jonathan {
+  grid-area: jonathan;
+  background: var(--very-dark-grayish-blue);
+  color: #FFF;
+}
+
+#jeanette {
+  grid-area: jeanette;
+  background: #FFF;
+  color: var(--very-dark-grayish-blue);
+}
+
+#patrick {
+  grid-area: patrick;
+  background: var(--very-dark-blackish-blue);
+  color: #FFF;
+}
+
+#kira {
+  grid-area: kira;
+  background: #FFF;
+  color: var(--very-dark-grayish-blue);
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 85%;
+  }
+
+  body {
+    overflow: scroll;
+  }
+
+  .container {
+    width: 85%;
+    overflow-y: scroll;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "daniel"
+                       "jonathan"
+                       "jeanette"
+                       "patrick"
+                       "kira"
+  }
+
+  #daniel {
+  background-size: 6.5rem;
+  }
+}
